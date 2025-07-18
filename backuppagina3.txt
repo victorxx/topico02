@@ -54,7 +54,7 @@
       transform: translate(-50%, -50%);
       background-color: #ff0000;
       color: white;
-      padding: 20px 40px;
+      padding: 20px 40px 40px; /* espaço extra embaixo para o botão */
       font-size: 20px;
       font-weight: bold;
       text-align: center;
@@ -69,14 +69,24 @@
       50% { opacity: 0; }
     }
 
-    /* Botão para fechar o anúncio */
+    /* Botão para fechar o anúncio - posicionado embaixo do iframe */
     .close-btn {
-      position: absolute;
-      top: 5px;
-      right: 10px;
-      font-size: 18px;
+      margin-top: 15px;
+      background: #fff;
+      color: #ff0000;
+      border: 2px solid #ff0000;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-weight: bold;
       cursor: pointer;
-      color: white;
+      font-size: 18px;
+      display: inline-block;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .close-btn:hover {
+      background-color: #ff0000;
+      color: #fff;
     }
   </style>
 </head>
@@ -93,8 +103,11 @@
 
   <!-- Propaganda piscante -->
   <div class="ads-blink" id="ads">
-    <span class="close-btn" onclick="document.getElementById('ads').style.display='none'">✖</span>
-    🔥 <iframe src="index.html" width="500" height="500"></iframe> 🔥
+    🔥
+    <iframe src="index.html" width="500" height="250" frameborder="0"></iframe>
+    🔥
+    <br />
+    <button class="close-btn" onclick="document.getElementById('ads').style.display='none'">✖ Fechar</button>
   </div>
 
   <script>
