@@ -238,5 +238,15 @@
         }
     </script>
 
+
+     <script>
+    window.onload = () => {
+      // Centraliza verticalmente e horizontalmente
+      const scrollX = (document.body.scrollWidth - window.innerWidth) / 2;
+      const scrollY = (document.body.scrollHeight - window.innerHeight) / 2;
+      window.scrollTo(scrollX, scrollY);
+    };
+  </script>
+
 </body>
 </html>
