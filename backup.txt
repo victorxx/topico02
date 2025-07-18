@@ -1,135 +1,245 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Notícias de Vila Velha</title>
-  <meta name="description" content="Últimas notícias da cidade de Vila Velha. Acompanhe atualizações sobre cultura, segurança e urbanismo." />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Escolha um assunto e obtenha um link relacionado ao tópico.">
+    <meta name="keywords" content="tópicos, links, assuntos, seleção, resposta dinâmica">
+    <meta name="author" content="Seu Nome">
+    <meta name="robots" content="index, follow">
+    <title>Escolha um Tópico</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f5f5f5;
-      color: #333;
-    }
+    <!-- Estilos CSS Internos -->
+    <style>
+        /* Reset básico de estilos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    header {
-      background-color: #005a87;
-      color: white;
-      text-align: center;
-      padding: 20px 0;
-    }
+        /* Corpo do site */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
 
-    main {
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 0 20px;
-    }
+        header {
+            background-color: #0056b3;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
 
-    article {
-      background-color: white;
-      margin-bottom: 20px;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
+        h1 {
+            font-size: 2rem;
+        }
 
-    article h2 {
-      color: #005a87;
-      margin-top: 0;
-    }
+        section {
+            padding: 20px;
+        }
 
-    .meta {
-      font-size: 0.85em;
-      color: #777;
-      margin-bottom: 10px;
-    }
+        .form-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
 
-    /* Propaganda piscante no centro da tela */
-    .ads-blink {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: #ff0000;
-      color: white;
-      padding: 20px 40px;
-      font-size: 20px;
-      font-weight: bold;
-      text-align: center;
-      border-radius: 12px;
-      animation: blink 900s infinite;
-      z-index: 9999;
-      box-shadow: 0 0 15px red;
-    }
+        .form-container label {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            display: block;
+        }
 
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
+        .form-container select,
+        .form-container button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
 
-    /* Botão para fechar o anúncio */
-    .close-btn {
-      position: absolute;
-      top: 5px;
-      right: 10px;
-      font-size: 18px;
-      cursor: pointer;
-      color: white;
-    }
-  </style>
+        .form-container button {
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .form-container button:hover {
+            background-color: #218838;
+        }
+
+        .result-container {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e2f7e2;
+            border: 1px solid #28a745;
+            border-radius: 5px;
+            text-align: center;
+            display: none; /* Escondido inicialmente */
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #28a745;
+            text-decoration: none;
+        }
+
+        .result-container a {
+            color: #0056b3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .result-container a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <h1>Notícias de Vila Velha</h1>
-    <p>Acompanhe os últimos acontecimentos da cidade</p>
-  </header>
+    <header>
+        <h1>Escolha um Tópico</h1>
+    </header>
 
-  <main id="news-container">
-    <!-- Notícias serão inseridas aqui via JS -->
-  </main>
+    <section>
+        <div class="form-container">
+            <h2>Escolha um Tópico de Interesse:</h2>
+            <form id="form" onsubmit="mostrarLink(event)">
+                <label for="topic">Selecione um Tópico:</label>
+                <select name="topic" id="topic" required>
+                    <option value="">Selecione...</option>
+                 
+                   
+                    <option value="roberto">SEGURO E CONSÓRCIO</option>
+                    <option value="gerson">CRÉDITO PESSOAL</option>
+                    <option value="VPS">PRECISA DE UMA VPS?</option>
+                    <option value="primorico">VIDEO DO PRIMO RICO</option>
+                    <option value="sorteio">ESTOU COM SORTE</option>
+                    <option value="larissa">Tratamento de calvice</option>
+                    <option value="rica">VÍDEOS DO RICA GAMES</option>
 
-  <!-- Propaganda piscante -->
-  <div class="ads-blink" id="ads">
-    <span class="close-btn" onclick="document.getElementById('ads').style.display='none'">✖</span>
-    🔥 <iframe src="index.html" width="500" height="500"></iframe> 🔥
-  </div>
+                </select>
 
-  <script>
-    const noticias = [
-      {
-        titulo: "Nova praça revitalizada é inaugurada em Itapoã",
-        data: "18 de julho de 2025",
-        categoria: "Urbanismo",
-        conteudo: "Moradores de Itapoã agora contam com um novo espaço de lazer. A praça foi reformada com brinquedos, academia popular e iluminação de LED."
-      },
-      {
-        titulo: "Festival de Quadrilhas anima Parque da Prainha",
-        data: "17 de julho de 2025",
-        categoria: "Cultura",
-        conteudo: "Grupos de dança, comidas típicas e muito forró tomaram conta do Parque da Prainha neste fim de semana."
-      },
-      {
-        titulo: "Prefeitura reforça patrulhamento em bairros da região 5",
-        data: "16 de julho de 2025",
-        categoria: "Segurança",
-        conteudo: "Com novas viaturas e mais agentes, bairros como Glória, Aribiri e Soteco passam a ter mais rondas diárias da Guarda Municipal."
-      }
-    ];
+                <button type="submit">Obter Link</button>
+            </form>
 
-    const container = document.getElementById('news-container');
+            <!-- Exibindo o link gerado -->
+            <div id="result-container" class="result-container">
+                <h3>Link Relacionado ao Tópico:</h3>
+                <p id="result"></p>
+            </div>
+        </div>
+    </section>
 
-    noticias.forEach(noticia => {
-      const article = document.createElement('article');
-      article.innerHTML = `
-        <h2>${noticia.titulo}</h2>
-        <div class="meta">${noticia.data} • ${noticia.categoria}</div>
-        <p>${noticia.conteudo}</p>
-      `;
-      container.appendChild(article);
-    });
+    <footer>
+        
+        <p><a href="https://shrtlk.biz/85XzH">Política de Privacidade</a> | <a href="https://shrtlk.biz/85XzH">Termos de Serviço</a></p>
+    </footer>
+
+    <script>
+        // Função que exibe o link com base no tópico escolhido
+        function mostrarLink(event) {
+            event.preventDefault(); // Impede o envio tradicional do formulário
+
+            // Obtendo o tópico escolhido pelo usuário
+            const topic = document.getElementById("topic").value;
+
+            // Verificando se o usuário selecionou um tópico válido
+            if (!topic) {
+                alert("Por favor, selecione um tópico.");
+                return;
+            }
+
+            // Definindo o link baseado no tópico
+            let link = '';
+
+           
+
+
+
+              //ESCOLHENDOTOPICO
+             switch(topic) {
+         
+  
+                 case 'rica':
+                     link='rica.html';
+                     break;
+                case 'larissa':
+                    link='https://www.larissasaib.com.br/';
+                    break;
+                 case 'VPS':
+                    link = 'https://central.dokehost.com.br/aff.php?aff=90';
+
+                    break;
+
+                case 'primorico':
+                    link='https://shrtlk.biz/85XzH';
+                    break;
+                case 'sorteio':
+
+                    link='https://victorxx.github.io/encaminhargithub/';
+                    break;
+
+                case 'gerson':
+                    link='https://geocredibnkvitoria.com/';
+                    break;
+
+                case 'roberto':
+                    link='https://victorxx.github.io/VPSVENDA/contatoroberto.html';
+                    break;
+                    
+                default:
+                    link = '#';
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            // Exibindo o link na página
+            const resultHtml = `<a href="${link}" target="_blank">${link}</a>`;
+            document.getElementById("result").innerHTML = resultHtml;
+            document.getElementById("result-container").style.display = "block"; // Tornando o resultado visível
+
+
+        }
+    </script>
+    
+     <script>
+        //centrodatela
+    window.onload = () => {
+      // Centraliza verticalmente e horizontalmente
+      const scrollX = (document.body.scrollWidth - window.innerWidth) / 2;
+      const scrollY = (document.body.scrollHeight - window.innerHeight) / 2;
+      window.scrollTo(scrollX, scrollY);
+    };
   </script>
 
 </body>
