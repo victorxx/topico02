@@ -90,13 +90,13 @@
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #333;
+            background-color: white;
             color: white;
             margin-top: 40px;
         }
 
         footer a {
-            color: #28a745;
+            color: red;
             text-decoration: none;
         }
 
@@ -124,8 +124,9 @@
                 <label for="topic">Selecione um Tópico:</label>
                 <select name="topic" id="topic" required>
                     <option value="">Selecione...</option>
-                 
-                   
+
+                    <option value="airbnb">COMEÇAR NO AIRBNB</option>
+                    <option value="erp">ERP CONFIRA ESSA OPORTUNIDADE</option>
                     <option value="roberto">SEGURO E CONSÓRCIO</option>
                     <option value="gerson">CRÉDITO PESSOAL</option>
                     <option value="VPS">PRECISA DE UMA VPS?</option>
@@ -175,7 +176,13 @@
 
               //ESCOLHENDOTOPICO
              switch(topic) {
-         
+                case 'airbnb':
+                    link='https://victorxx.github.io/erpgithubrnadom01/';
+                    break;
+
+                case 'erp':
+                    link='https://victorxx.github.io/erpgithubrnadom01/';
+                    break;
   
                  case 'rica':
                      link='rica.html';
