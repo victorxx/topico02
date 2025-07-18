@@ -177,7 +177,7 @@
               //ESCOLHENDOTOPICO
              switch(topic) {
                 case 'airbnb':
-                    link='https://victorxx.github.io/erpgithubrnadom01/';
+                    link='https://victorxx.github.io/airbnbrandom01/';
                     break;
 
                 case 'erp':
