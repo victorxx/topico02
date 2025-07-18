@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <!-- Configurações básicas do cabeçalho -->
+  <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- SEO -->
+                            <title>Rica Games: Vídeos Polêmicos e Reflexivos</title>
+
+                            <!-- Meta Description -->
+                            <meta name="description" content="Assista aos vídeos mais impactantes de Rica Games. Reflexões, polêmicas e verdades sobre masculinidade, sociedade e comportamento." />
+
+                            <!-- Meta Keywords -->
+                            <meta name="keywords" content="rica games, vídeos rica games, masculinidade, redpill, sociedade, polêmicas, iceberg rica games, entrevistas rica games" />
+
+                            <!-- Meta Robots -->
+                            <meta name="robots" content="index, follow" />
+
+                            <!-- Open Graph -->
+                            <meta property="og:title" content="Rica Games: Vídeos Polêmicos e Reflexivos" />
+                            <meta property="og:description" content="Explore os vídeos mais marcantes do Rica Games. Uma jornada intensa por ideias controversas, reflexões pessoais e críticas à sociedade." />
+                            <meta property="og:image" content="URL_da_imagem_do_rica" />
+                            <meta property="og:url" content="URL_do_site_com_videos_do_rica" />
+                            <meta property="og:type" content="website" />
+
+                            <!-- Twitter Card -->
+                            <meta name="twitter:card" content="summary_large_image" />
+                            <meta name="twitter:title" content="Rica Games: Vídeos Polêmicos e Reflexivos" />
+                            <meta name="twitter:description" content="Assista aos vídeos mais impactantes e controversos de Rica Games. Reflexões sobre masculinidade, poder e sociedade." />
+                            <meta name="twitter:image" content="URL_da_imagem_do_rica" />
+
+
+  <!-- Favicon -->
+  <link rel="icon" href="URL_do_favicon" type="image/x-icon" />
+
+  <!-- Estilos CSS -->
+  <style>
+    body {
+      margin: 0;
+      background-color: #1b1b1b; /* Fundo escuro com tom de cinza */
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      position: relative;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ff0000; /* Vermelho intenso */
+      text-shadow: 1px 1px 3px black;
+    }
+
+    #video-container {
+      width: 100%;
+      max-width: 800px;
+      aspect-ratio: 16 / 9;
+      margin-bottom: 10px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 0 15px #ff0000; /* Vermelho forte */
+    }
+
+    #video-title {
+      max-width: 800px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #ffcc00; /* Dourado */
+      text-shadow: 1px 1px 2px black;
+      min-height: 2.5em;
+    }
+
+    button {
+      background-color: #ff0000; /* Vermelho forte */
+      border: none;
+      padding: 12px 25px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 6px;
+      margin-bottom: 40px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e60000;
+    }
+
+    #unique-string {
+      max-width: 90%;
+      background-color: #222; /* Cinza escuro */
+      border-radius: 8px;
+      padding: 15px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 14px;
+      white-space: pre-wrap;
+      word-break: break-word;
+      color: #ccc;
+      user-select: text;
+      margin-top: auto;
+    }
+
+    /* Propagandas piscantes */
+    #propaganda-piscante, #propaganda-piscante2 {
+      position: fixed;
+      background-color: #ff0000; /* Vermelho intenso */
+      color: white;
+      font-weight: bold;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      animation: piscar 1s infinite alternate;
+      box-shadow: 0 0 10px #ff4500;
+      z-index: 1000;
+      user-select: none;
+    }
+
+    /* Propaganda no topo */
+    #propaganda-piscante {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* Propaganda no rodapé */
+    #propaganda-piscante2 {
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @keyframes piscar {
+      0% { opacity: 1; }
+      100% { opacity: 0.3; }
+    }
+
+    /* Ajustes para mobile */
+    @media (max-width: 600px) {
+      #video-container {
+        max-width: 100%;
+        aspect-ratio: auto;
+        height: 215px;
+      }
+
+      #video-title {
+        font-size: 16px;
+      }
+
+      /* Reduz o tamanho das propagandas no mobile */
+      #propaganda-piscante, #propaganda-piscante2 {
+        font-size: 14px;
+        padding: 8px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Título principal da página -->
+  <h1>Redpill: A Verdade Revelada tudo que você precisa saber</h1>
+
+  <!-- Container onde o vídeo será carregado via JavaScript -->
+  <div id="video-container"></div>
+
+  <!-- Título do vídeo carregado -->
+  <div id="video-title">Carregando título...</div>
+
+  <!-- Botão para trocar vídeo aleatório -->
+  <button onclick="trocarVideo()">Trocar Vídeo</button>
+
+  <!-- Texto aleatório no fim da tela para tornar o conteúdo único -->
+  <div id="unique-string">Carregando conteúdo único...</div>
+
+  <!-- Propaganda piscante no canto direito -->
+  <div id="propaganda-piscante" onclick="window.open('https://victorxx.github.io/redirecionadorlinksgit1/', '_blank')">
+    OFERTA IMPERDÍVEL!
+  </div>
+
+  <!-- Propaganda piscante no canto esquerdo -->
+  <div id="propaganda-piscante2" onclick="window.open('https://victorxx.github.io/airbnbrandom01/', '_blank')">
+    COMECE NO AIRBNB HJ MESMO
+  </div>
+
+  <!-- JavaScript responsável pela lógica da página -->
+  <script>
+    // Lista de vídeos com seus IDs do YouTube e títulos personalizados relacionados a dancinhas
+    const videos = [
+      {id:"x8pCi6ZWS-I",titulo:"RICA GAMES É  Rica games trabalha 0x7 (renan reacts)"},
+      {id:"2Z9oiBjFsas",titulo:"Haters do rica games estão expondo ele no facebook simulador de rica games"},
+      {id:"HGugfrmktDQ",titulo:"rica games caindo na live"},
+      {id:"UDL1v8M4rHc",titulo:"NÃO DA MAIS PRA IGNORAR A SITUAÇÃO DO RICA GAMES | NEM A FAMÍLIA AGUENTA MAIS!"},
+      {id:"sy5JscBlXUY",titulo:"NOEL FOI SALVO"},
+      {id:"8EpeTJJvKp4",titulo:"RICA GAMES DECIDE VENDER O PC E CULPA RENANPLAY"},
+      {id:"2S8mT5DlzhY",titulo:"rica games está dando porrada em si mesmo"},
+      {id:"E-5J1RfIUv0",titulo:"rica games surtando"}
+
+    
+    ];
+
+    // Retorna um vídeo aleatório da lista
+    function getRandomVideo() {
+      return videos[Math.floor(Math.random() * videos.length)];
+    }
+
+    // Troca o vídeo exibido e atualiza o título
+    function trocarVideo() {
+      const video = getRandomVideo();
+      const container = document.getElementById('video-container');
+      const tituloEl = document.getElementById('video-title');
+
+      container.innerHTML = `<iframe 
+        src="https://www.youtube.com/embed/${video.id}" 
+        allowfullscreen 
+        loading="lazy" 
+        title="${video.titulo}"
+      ></iframe>`;
+
+      tituloEl.textContent = video.titulo;
+    }
+
+    // Gera uma string aleatória com letras, números e caracteres especiais
+    function gerarStringUnica(tamanho = 500) {
+      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?';
+      let resultado = '';
+      for(let i = 0; i < tamanho; i++) {
+        resultado += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+      return resultado;
+    }
+
+    // Executa ao carregar a página
+    document.addEventListener('DOMContentLoaded', () => {
+      trocarVideo(); // Carrega o vídeo inicial
+      document.getElementById('unique-string').textContent = gerarStringUnica(); // Gera a string aleatória no final
+    });
+  </script>
+
+</body>
+</html>
