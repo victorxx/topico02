@@ -129,12 +129,13 @@
                    
              
                     <option value="roberto">SEGURO E CONSÓRCIO</option>
+                    <option value="rica">VIDEOS DO RICA GAMES</option>
                     <option value="gerson">CRÉDITO PESSOAL</option>
                     <option value="VPS">PRECISA DE UMA VPS?</option>
                     <option value="primorico">VIDEO DO PRIMO RICO</option>
                     <option value="sorteio">ESTOU COM SORTE</option>
                     <option value="larissa">Tratamento de calvice</option>
-                    <option value="rica">VÍDEOS DO RICA GAMES</option>
+                    
 
                 </select>
 
@@ -177,6 +178,9 @@
 
               //ESCOLHENDOTOPICO
              switch(topic) {
+                 case 'rica':
+                     link='rica.html';
+                     break;
                 case 'larissa':
                     link='https://www.larissasaib.com.br/';
                     break;
